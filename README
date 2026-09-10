@@ -1,0 +1,17 @@
+# dtouch
+
+A simple dostouch written in C
+
+# Installation
+
+Please download the releases and run
+
+If pull by source code, compile in TurboC2.0/tcc not vc
+
+# System Requirements
+
+Tested on 8086 FreeDOS, Other DOSes are not yet clear.
+
+# How to use
+
+USEAGE: DTOUCH <filename> 

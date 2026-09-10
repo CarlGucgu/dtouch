@@ -86,7 +86,7 @@ int main(int argc, char *argv[]){
 
 	if (argc < 2){
 		printf("DTOUCH, A STUPID DOS TOUCH\n") ;
-		printf("USEAGE: TOUCH <filename> \n");
+		printf("USEAGE: DTOUCH <filename> \n");
 		return 1;
 		}
 
