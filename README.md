@@ -15,6 +15,11 @@ Tested on 8086 FreeDOS, Other DOSes are not yet clear.
 # How to use
 
 TOUCH [-t YYYYMMDDHHMMSS] <filename>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5a1cee7 (add new time feature)
 TOUCH <filename>
 
 You can also get help by 
