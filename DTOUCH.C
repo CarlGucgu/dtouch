@@ -84,9 +84,10 @@ int touch_afile(const char *filename, const char *custom_time){
 	/*Abandon: &handle/
 	/*TC works like an idiot for dos calls, so i use posix instead*/
     handle = open(filename, O_RDWR);
+	/*RDWR ==-1 (File Not Found) */
 
     if(handle == -1) {
-	/* _dos_open ==2 (File Not Found) ==1 Failure */
+	
 		handle = creat(filename, 0);
         if (handle == -1) {
 			printf("ERROR: Cannot create file %s\n", filename);
@@ -129,37 +130,35 @@ int touch_afile(const char *filename, const char *custom_time){
 
 
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
 	int i;
-    int file_start_index = 1;
     char *custom_time = NULL;
+    const char *USEAGE = "USEAGE: TOUCH [-t YYYYMMDDHHMMSS] <filename> \n";
 
-	if (argc < 2){
+	if (argc < 2) {
 		printf("DTOUCH, A STUPID DOS TOUCH\n") ;
-		printf("USEAGE: TOUCH [-t YYYYMMDDHHMMSS] <filename> \n");
+		printf("%s", USEAGE);
 		return 1;
 		}
 
     if (strcmp(argv[1], "-t") == 0) {
         if (argc < 4) {
             printf("ERROR: -t option requires time string and filename\n");
-            printf("USEAGE: TOUCH [-t YYYYMMDDHHMMSS] <filename> \n");
+	    printf("%s", USEAGE);
             return 1;
         }
         custom_time = argv[2];
-        file_start_index = 3; 
     }
 	    if (strcmp(argv[1], "-h") == 0) {
         if (argc < 4) {
-            printf("USEAGE: TOUCH [-t YYYYMMDDHHMMSS] <filename> \n");
+	    printf("%s", USEAGE);
             return 1;
         }
         custom_time = argv[2];
-        file_start_index = 3; 
     }
-	/*Again, maybe i'll make it less bloat*/
+	/*Less bloat i made*/
 
-	for (i = 1; i < argc; i++){
+	for (i = 1; i < argc; i++) {
 		touch_afile(argv[i], custom_time);
 		}
 	return 0;
