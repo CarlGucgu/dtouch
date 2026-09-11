@@ -20,7 +20,8 @@ TOUCH [-t YYYYMMDDHHMMSS] <filename>
 TOUCH <filename>
 
 You can also get help by 
-`` TOUCH -h
+
+`` TOUCH -h ``
 
 # Licensing
 
